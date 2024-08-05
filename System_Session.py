@@ -1,3 +1,17 @@
+import speech_recognition as sr #voice recognition para makilala yung boses mo 
+import pyttsx3 #text to speech / nagcoconvert ng texto sa salita
+
+# SPEECH GENERATION
+def speak(text):
+    text = str(text)
+    engine = pyttsx3.init('sapi5')
+    voices = engine.getProperty('voices') 
+    engine.setProperty('voice', voices[0].id)
+    engine.setProperty('rate', 145)
+    engine.say(text)
+    engine.runAndWait()
+
+
 def get_event_date(event):
   return event.date
 
@@ -40,3 +54,5 @@ users = current_users(events)
 print(users)
 
 generate_report(users)
+speak("System session log")
+speak(users)
