@@ -6,7 +6,7 @@ def speak(text):
     text = str(text)
     engine = pyttsx3.init('sapi5')
     voices = engine.getProperty('voices') 
-    engine.setProperty('voice', voices[0].id)
+    engine.setProperty('voice', voices[1].id)
     engine.setProperty('rate', 145)
     engine.say(text)
     engine.runAndWait()
@@ -48,6 +48,7 @@ events = [
   Event('2020-01-21 08:20:01', 'login', 'webserver.local', 'jordan'),
   Event('2020-01-23 11:24:35', 'login', 'mailserver.local', 'chris'),
   Event('2024-07-19 08:49:40', 'login', 'linux.local', 'steven'),
+  Event('2024-07-19 08:49:40', 'login', 'myworkstation.local', 'steven'),
 ]
 
 users = current_users(events)
